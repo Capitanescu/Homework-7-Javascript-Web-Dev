@@ -1,0 +1,151 @@
+:root {
+    --color-primary: #006b3c;
+    --color-primary-light: #009b56;
+    --color-secondary: #fdcc0d;
+    --color-secondary-light: #fdd330;
+    --color-secondary-dark: #caa101;
+    --color-tertiary: #69359c;
+    --color-tertiary-dark: #4d2773;
+    --color-tertiary-light: #c5a5d2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    --color-grey-light-5: #f7f7f7;
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-orange: #f99e22;
+
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/*-- iPhone X to XII Remove Gutters --*/
+html {
+    padding: env(safe-area-inset);
+    margin: 0;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+
+}
+
+.container-style {
+    margin-top: 3rem;
+
+}
+
+.agenda {
+    font-size: 5.4rem;
+    color: #FFFFFF;
+}
+
+.inputs-bg {
+    background-image: linear-gradient(100deg, rgba(0, 0, 0, .3) 50%, transparent 50%), url("../img/wired_phone.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 60% 85%;
+    height: 60vh;
+    margin-top: 2rem;
+    border: 2px solid #ddd6d6;
+    border-radius: 5px;
+}
+
+.add_contact {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    background-color: #173F6B;
+    color: white;
+    border-radius: 10px;
+    border-color: #173F6B;
+    -webkit-box-shadow: 2px 2px 19px 8px rgba(255, 255, 255, 0.81);
+    box-shadow: 2px 2px 19px 8px rgba(255, 255, 255, 0.81);
+    margin-top: 7rem;
+    transition: .4s all;
+
+}
+
+.add_contact:hover {
+    transform: scale(1.2) translateX(3rem);
+    background-color: darkorange;
+    border-color: darkorange;
+    cursor: pointer;
+    perspective: 100rem;
+}
+
+
+.inputs-data {
+    width: 85%;
+    margin-top: 10rem;
+}
+
+.label-style {
+    color: white;
+    font-size: 2.3rem;
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+
+}
+
+input {
+    display: inline-block;
+    font-size: 2.4rem;
+    -webkit-box-shadow: 2px 2px 19px 8px rgba(255, 255, 255, 0.81);
+    box-shadow: 2px 2px 19px 8px rgba(255, 255, 255, 0.81);
+    border: 5px solid #173F6B;
+    border-radius: 5px;
+
+}
+
+.bg-thead {
+    background-color: #173F6B;
+    border: 2px solid #173F6B;
+    border-radius: 10px;
+}
+
+.mandatory {
+    color: wheat;
+}
+
+.valid {
+    -webkit-box-shadow: 2px 2px 19px 8px rgba(47, 255, 86, 0.81);
+    box-shadow: 2px 2px 19px 8px rgba(47, 255, 86, 0.81);
+    border-color: #2FFF56;
+    background-color: rgba(47, 255, 86, .5);
+}
+
+.invalid {
+    -webkit-box-shadow: 2px 2px 19px 8px rgba(255, 0, 0, 0.81);
+    box-shadow: 2px 2px 19px 8px rgba(255, 0, 0, 0.81);
+    border-color: red;
+    background-color: rgba(255, 0, 0, .5);
+}
+
+
+.error-message{
+    display: none;
+    font-size: 1.8rem;
+    background-color: papayawhip;
+    color: red;
+    font-weight: bolder;
+    padding: 0 .5rem;
+    margin-top: 1rem;
+}
+
+.error-message.visible {
+    display: block;
+}
