@@ -89,16 +89,14 @@ function clearInvalid(elem, event) {
 
 }
 function digitLimit(elem, event) {
-    if (elem.value.length >= 11) {
+    if (event.key === 13) {
+        onFormSubmit();
+    }
+    if (elem.value.length > 10) {
         event.preventDefault();
     }
 }
-function submitEnter(event) {
-    if(event.key === 13){
-        onFormSubmit();
 
-    }
-}
 function readFormData() {
     var formData = {};
     formData["name"] = document.querySelector('[name="name"]').value;
