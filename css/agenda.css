@@ -48,7 +48,9 @@ body {
 
 .agenda {
     font-size: 5.4rem;
-    color: #FFFFFF;
+    border-bottom: 5px solid #173F6B;
+    padding-bottom: .5rem;
+
 }
 
 .inputs-bg {
