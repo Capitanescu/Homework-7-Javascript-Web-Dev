@@ -56,7 +56,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 60% 85%;
-    height: 60vh;
+    height: 70vh;
     margin-top: 2rem;
     border: 2px solid #ddd6d6;
     border-radius: 5px;
@@ -135,7 +135,12 @@ input {
     background-color: rgba(255, 0, 0, .5);
 }
 
-
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
 .error-message{
     display: none;
     font-size: 1.8rem;
@@ -149,3 +154,45 @@ input {
 .error-message.visible {
     display: block;
 }
+
+.icon-style-1{
+    font-size: 2.8rem;
+    color: #173F6B;
+}
+.icon-style-2{
+    font-size: 2.8rem;
+    color: red;
+}
+tbody,th{
+    font-size: 2.4rem;
+}
+.link-icon{
+    border: none;
+    background-color: transparent;
+}
+.link-icon:focus{
+    outline: none;
+}
+.link-icon .icon-style-1{
+    transition: all .4s;
+    padding-left: 3.5rem;
+}
+.link-icon:hover .icon-style-1{
+    color: green;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.link-icon .icon-style-2{
+    transition: all .4s;
+    padding-left: 2rem;
+
+}
+.link-icon:hover .icon-style-2{
+    color: black;
+    transform: scale(1.5);
+    cursor: pointer;
+
+}
+
+/*DESIGN A CONFIRM/DENY MODAL FOR DELETING/NOT DELETING A CONTACT FROM THE AGENDA*/
