@@ -90,7 +90,6 @@ function clearInvalid(elem, event) {
 }
 function digitLimit(elem, event) {
     if (elem.value.length >= 11) {
-        console.log(elem.value);
         event.preventDefault();
     }
 }
@@ -133,6 +132,8 @@ function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
     document.getElementById("name").value = selectedRow.cells[0].innerHTML;
     document.getElementById("tel").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("name").classList.remove("invalid");
+    document.getElementById("tel").classList.remove("invalid");
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.name;
