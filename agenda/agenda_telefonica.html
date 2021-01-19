@@ -2,7 +2,6 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Agenda telefonică</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script
@@ -24,35 +23,38 @@
 
 
 </head>
-<body>
+<body onload="draw();">
 <div class="container container-style">
     <div class="row">
         <div class="col-12 text-center"><span class="agenda">Agenda</span></div>
+        <!--onsubmit="validateContact(this,event);"-->
     </div>
     <div class="row inputs-bg">
-        <div class="col-6 d-flex justify-content-end">
-            <form onsubmit="validateContact(this,event);onFormSubmit(this,event);" autocomplete="off" class="inputs-data">
+        <div class="col-md-6 d-flex justify-content-end">
+            <form id="add-form" onsubmit="validateForm(this,event);"  class="inputs-data bounceIn">
                 <label for="name">
                     <span class="label-style">Nume <span class="mandatory">*</span> :</span>
                 </label>
-                <input id="name" type="text" name="name" onblur="requireName();" onfocus="clearInvalid(this, event);">
+                <input id="name" type="text" name="name"  onblur="requireName(this,event);" onfocus="clearInvalid(this,event);">
                 <div class="error-message">Vă rugăm să introduceți numele!</div>
                 <div class="error-message">Numele trebuie să aibă minim 3 caractere!</div>
                 <div class="error-message">Numele poate conține doar litere și caracterul '-'</div>
-                <label for="tel" class="mt-4">
+                <label for="phone" class="mt-4">
                     <span class="label-style">Telefon <span class="mandatory">*</span> :</span>
                 </label>
-                <input id="tel" type="tel" name="tel" onblur="requireTel();" onfocus="clearInvalid(this, event);"
-                       onkeypress="digitLimit(this,event);">
+                <input id="phone" type="tel" name="phone" onkeypress="digitLimit(this,event)" onkeyup="enterAdd(this,event);" onblur="requireTel(this,event);" onfocus="clearInvalid(this,event);">
                 <div class="error-message">Introduceți un număr de telefon valid!</div>
                 <br>
-                <button type="submit" class="add_contact ">adaugă contact</button>
+                <button type="submit" onclick="addContact();"  class="add_contact">adaugă contact</button>
+
             </form>
         </div>
-        <div class="col-6 pl-0"></div>
+        <div class="col-md-6 pl-0 d-flex flex-column  justify-content-center">
+            <img class=" shake phone-img pr-5" src="img/phone.png" alt="phone">
+        </div>
     </div>
     <div class="row mt-4">
-        <div class="col-12 px-0 table">
+        <div class="col-12 px-0">
             <table id="contacts" class="table table-hover">
                 <thead class="bg-thead text-white">
                 <tr>

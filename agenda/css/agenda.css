@@ -48,13 +48,11 @@ body {
 
 .agenda {
     font-size: 5.4rem;
-    border-bottom: 5px solid #173F6B;
-    padding-bottom: .5rem;
-
+    color: #FFFFFF;
 }
 
 .inputs-bg {
-    background-image: linear-gradient(100deg, rgba(0, 0, 0, .3) 50%, transparent 50%), url("../img/wired_phone.jpg");
+    background-image: linear-gradient(100deg, rgba(0, 0, 0, .4) 50%, transparent 50%), url("../img/background_phone.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 60% 85%;
@@ -89,7 +87,7 @@ body {
 
 .inputs-data {
     width: 85%;
-    margin-top: 10rem;
+    margin-top: 15rem;
 }
 
 .label-style {
@@ -127,7 +125,7 @@ input {
     -webkit-box-shadow: 2px 2px 19px 8px rgba(47, 255, 86, 0.81);
     box-shadow: 2px 2px 19px 8px rgba(47, 255, 86, 0.81);
     border-color: #2FFF56;
-    background-color: rgba(47, 255, 86, .5);
+    background-color: rgb(255, 252, 252);
 }
 
 .invalid {
@@ -154,7 +152,7 @@ input {
 }
 
 .error-message.visible {
-    display: block;
+    display: inline-block;
 }
 
 .icon-style-1{
@@ -176,7 +174,7 @@ tbody,th{
     outline: none;
 }
 .link-icon .icon-style-1{
-    transition: all .4s;
+transition: all .4s;
     padding-left: 3.5rem;
 }
 .link-icon:hover .icon-style-1{
@@ -196,5 +194,52 @@ tbody,th{
     cursor: pointer;
 
 }
+.hidden{
+    display: none;
+}
 
+.phone-img{
+    width: 105%;
+}
+
+/*ANIMATIONS*/
+.shake {
+    -webkit-animation-name: shake;
+    animation-name: shake;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
 /*DESIGN A CONFIRM/DENY MODAL FOR DELETING/NOT DELETING A CONTACT FROM THE AGENDA*/

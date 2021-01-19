@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shopping list</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/shoppinglist.css">
+</head>
+<body onload="draw();">
+    <div class="container container-style">
+        <div class="row">
+            <div class="col-12 text-center flipInY"><span class="shopping-title ">Shopping List</span></div>
+        </div>
+        <div class="row inputs-bg">
+            <div class="col-6">
+                <form onsubmit="validateForm(this,event);" id="add-form" class="add-wrap bounceIn">
+                    <input onblur="requireProduct(this,event);" onkeyup="enterAdd(this,event);" onfocus="clearInvalid();"  type="text" name="name"  placeholder="Nume produs..."/>
+                    <button type="submit" onclick="addProduct();" class="add-item ml-5">add item</button>
+                </form>
+                <div class="error-message zoomInDown">Vă rugăm să adăugați un produs!</div>
+                <div class="error-message zoomInDown">Numele produsului trebuie să conțină cel puțin 3 caractere!</div>
+                <div class="error-message zoomInDown">Numele produsului trebuie să conțină doar litere!</div>
+
+
+            </div>
+            <div class="col-6 pl-0"></div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-7"><img class="slideInLeft" src="img/man_checklist.png" alt="checking list"></div>
+            <div class="col-5 px-0">
+                <div class="mb-5 slideInRight">
+                    <button onclick="sort('az');"  class="add-item add-item-asc mr-5"><i class="fas fa-arrow-up arrow-style"></i>Sort asc</button>
+                    <button onclick="sort('za');" class="add-item add-item-desc"><i class="fas fa-arrow-down arrow-style"></i>Sort desc</button>
+                </div>
+
+                <table id="zoom" class="table table-light table-hover table-style slideInRight">
+                    <thead class="bg-thead">
+                    <tr>
+                        <th scope="col" class="text-white">Item description</th>
+                        <th scope="col" class="text-white">Action</th>
+
+                    </tr>
+                    </thead>
+                    <tbody class="table-body"></tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+<script src="js/shoppinglist.js" ></script>
+</body>
+</html>
